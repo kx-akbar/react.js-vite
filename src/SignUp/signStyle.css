@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  color: red;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-family: Inter;
+}
+
+.login {
+  color: rgb(31, 31, 31);
+  font-family: Inter;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 38px;
+  letter-spacing: 0px;
+  text-align: center;
+}
+
+.description {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  color: rgb(140, 140, 140);
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.5%;
+  text-align: center;
+}
+
+.form {
+  display: grid;
+  grid-template-areas:
+    "a a a a"
+    "b b b b"
+    "f f . .";
+  margin-bottom: 1rem;
+}
+
+label {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.5%;
+  text-align: left;
+}
+
+label[for="email-input"] > b,
+label[for="email-password"] > b {
+  color: red;
+}
+
+.forgot-pw {
+  grid-area: f;
+}
+
+.input-box-1 {
+  grid-area: a;
+  margin-bottom: 2rem;
+}
+.input-box-2 {
+  grid-area: b;
+  margin-bottom: 1rem;
+}
+
+.input-box-2 + button {
+  color: rgb(140, 140, 140);
+  font-family: Inter;
+  font-size: 0.88rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  letter-spacing: 0.5%;
+  text-align: left;
+  text-decoration-line: underline;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+input[type="email"],
+input[type="password"] {
+  outline: none;
+  border: none;
+  width: 100%;
+  padding: 0 0.7rem 0 0.7rem;
+  color: rgb(146, 159, 175);
+  font-family: Inter;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  letter-spacing: 0.5%;
+  text-align: left;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  box-sizing: border-box;
+  width: 24.38rem;
+  height: 3rem;
+  padding: 0.5rem 0.75rem 0.5rem 0.75rem;
+  border: 1px solid rgb(208, 215, 222);
+  border-radius: 8px;
+  background: rgb(255, 255, 255);
+}
+
+.input > i {
+  width: 1.13rem;
+  cursor: pointer;
+  height: 0.94rem;
+}
+
+.login-btn {
+  width: 100%;
+  height: 3rem;
+  color: rgb(255, 255, 255);
+  font-family: Inter;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  letter-spacing: 0.5%;
+  text-align: center;
+  padding: 0.75rem 1.13rem 0.75rem 1.13rem;
+  border: 0.06rem solid rgb(47, 84, 235);
+  outline: none;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  box-shadow: inset 0rem 0rem 0rem 0.13rem rgba(255, 255, 255, 0.12);
+  background: rgb(24, 144, 255);
+}
