@@ -97,7 +97,7 @@ label[for="email-password"] > b {
 }
 
 input[type="email"],
-input[type="password"] {
+#email-password {
   outline: none;
   border: none;
   width: 100%;
@@ -147,4 +147,38 @@ input[type="password"] {
   border-radius: 0.5rem;
   box-shadow: inset 0rem 0rem 0rem 0.13rem rgba(255, 255, 255, 0.12);
   background: rgb(24, 144, 255);
+}
+
+.fa-lock {
+  transition: all 190ms;
+  transform: scale(1);
+}
+
+.fa-lock:hover {
+  color: blue;
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 10px blue);
+}
+
+.fa-envelope {
+  transition: all 190ms;
+  transform: scale(1);
+}
+
+.fa-envelope:hover {
+  color: rgb(56, 56, 56);
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 10px rgb(169, 110, 0));
+}
+
+.fa-eye,
+.fa-eye-slash {
+  transition: all 190ms;
+  transform: scale(1);
+}
+
+.fa-eye:hover,
+.fa-eye-slash:hover {
+  color: rgb(56, 56, 56);
+  transform: scale(1.1044);
 }
