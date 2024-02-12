@@ -90,10 +90,13 @@ label[for="email-password"] > b {
   line-height: 1.25rem;
   letter-spacing: 0.5%;
   text-align: left;
-  text-decoration-line: underline;
   border: none;
   background: none;
+}
+
+.input-box-2 + button:hover {
   cursor: pointer;
+  text-decoration-line: underline;
 }
 
 input[type="email"],
