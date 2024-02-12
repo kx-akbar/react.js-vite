@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./signStyle.css";
+import { loadConfigFromFile } from "vite";
 
 function SignUp() {
   const [inpVal, setInpVal] = useState("");
@@ -86,7 +87,7 @@ function SignUp() {
                     : { border: "1px solid red" }
                 }
               >
-                <i className="fa-solid fa-lock"></i>
+                <i className="fa-solid fa-envelope"></i>
                 <input
                   type="email"
                   id="email-input"
@@ -120,7 +121,7 @@ function SignUp() {
                     : { border: "1px solid red" }
                 }
               >
-                <i className="fa-solid fa-envelope"></i>
+                <i className="fa-solid fa-lock"></i>
                 <input
                   type={inputType}
                   id="email-password"
