@@ -1,56 +1,74 @@
 import React, { useState } from "react";
 import "./signStyle.css";
-import { loadConfigFromFile } from "vite";
 
 function SignUp() {
-  const [inpVal, setInpVal] = useState("");
   const [viewPw, dontViewPw] = useState(false);
-  const [defaultValue, setValue] = useState("");
-  const [defInpValue, wrongInpValue] = useState("");
-  const [initalValue, setInitialValue] = useState("");
+  const [inputvalue, setInputValue] = useState({
+    email: "",
+    password: "",
+  });
 
-  function wrongValue(e) {
-    const eventValue = e.target.value;
-    const onlyLatin = /^[a-zA-Z]*$/;
-    const email = "Webbrain";
-    if (onlyLatin.test(eventValue) || eventValue == email) {
-      setValue(eventValue);
-      wrongInpValue("Correct value");
-      setTimeout(() => {
-        wrongInpValue("");
-      }, 4000);
-    } else {
-      wrongInpValue("Wrong Value");
-      setTimeout(() => {
-        wrongInpValue("");
-      }, 2000);
-    }
+  const [error, setError] = useState({
+    emailError: "",
+    pwError: "",
+  });
+
+  const obj = {
+    email: "webbrain123@gmail.com",
+    password: "12345",
+  };
+
+  function onChange(e) {
+    const { value, name } = e.target;
+    setError("");
+    setInputValue((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   }
+
+  const forgotPassword = (e) => {
+    e.preventDefault();
+    setInputValue((val) => ({ ...val, password: "" }));
+  };
+
+  const onSubmit = () => {
+    if (inputvalue.email == obj.email && inputvalue.password == obj.password) {
+      setError((err) => ({
+        ...err,
+        emailError: "Correct value",
+        pwError: "Correct value",
+      }));
+      setTimeout(() => alert("Welcome to Webbrain"), 1000);
+    } else if (
+      inputvalue.email == obj.email &&
+      inputvalue.password != obj.password
+    ) {
+      setError((err) => ({
+        ...err,
+        emailError: "Correct value",
+        pwError: "Wrong Answer",
+      }));
+    } else if (
+      inputvalue.email != obj.email &&
+      inputvalue.password == obj.password
+    ) {
+      setError((err) => ({
+        ...err,
+        pwError: "Correct value",
+        emailError: "Wrong Answer",
+      }));
+    } else {
+      setError((err) => ({
+        ...err,
+        emailError: "Wrong Answer",
+        pwError: "Wrong Answer",
+      }));
+    }
+  };
 
   const pwClass = viewPw ? "fa-regular fa-eye" : "fa-solid fa-eye-slash";
   const inputType = viewPw ? "text" : "password";
-
-  function clearInput(e) {
-    e.preventDefault();
-    setInpVal("");
-  }
-
-  function passwordInput(e) {
-    setInpVal(e.target.value);
-    const eventVal = e.target.value;
-    const pw = "Webbrain";
-    if (eventVal == pw || eventVal == "WBA" || eventVal == "wba123") {
-      setInitialValue("Correct Password");
-      setTimeout(() => {
-        setInitialValue("");
-      }, 4000);
-    } else if (eventVal != pw || eventVal != "WBA" || eventVal != "wba123") {
-      setInitialValue("Wrong Password");
-      setTimeout(() => {
-        setInitialValue("");
-      }, 2000);
-    }
-  }
 
   return (
     <div>
@@ -66,34 +84,23 @@ function SignUp() {
                 Email Address <b>*</b>
                 <span
                   style={
-                    defInpValue == "Correct value"
-                      ? {
-                          color: "green",
-                          marginLeft: "0.4rem",
-                        }
-                      : { color: "red", marginLeft: "0.4rem" }
+                    error.emailError == "Correct value"
+                      ? { color: "green", marginLeft: "0.3rem" }
+                      : { color: "red", marginLeft: "0.3rem" }
                   }
                 >
-                  {defInpValue}
+                  {error.emailError}
                 </span>
               </label>
-              <div
-                className="input"
-                style={
-                  defInpValue == "Correct value"
-                    ? { border: "1px solid green" }
-                    : defInpValue == ""
-                    ? { border: "1px solid rgb(208, 215, 222)" }
-                    : { border: "1px solid red" }
-                }
-              >
+              <div className="input">
                 <i className="fa-solid fa-envelope"></i>
                 <input
                   type="email"
                   id="email-input"
                   autoComplete="off"
-                  value={defaultValue}
-                  onChange={wrongValue}
+                  name="email"
+                  value={inputvalue.email}
+                  onChange={onChange}
                   placeholder="Enter your email address"
                 />
               </div>
@@ -103,42 +110,34 @@ function SignUp() {
                 Email Address <b>*</b>
                 <span
                   style={
-                    initalValue == "Correct Password"
-                      ? { color: "green", marginLeft: "0.4rem" }
-                      : { color: "red", marginLeft: "0.4rem" }
+                    error.pwError == "Correct value"
+                      ? { color: "green", marginLeft: "0.3rem" }
+                      : { color: "red", marginLeft: "0.3rem" }
                   }
                 >
-                  {initalValue}
+                  {error.pwError}
                 </span>
               </label>
-              <div
-                className="input"
-                style={
-                  initalValue == "Correct Password"
-                    ? { border: "1px solid green" }
-                    : initalValue == ""
-                    ? { border: "1px solid rgb(208, 215, 222)" }
-                    : { border: "1px solid red" }
-                }
-              >
+              <div className="input">
                 <i className="fa-solid fa-lock"></i>
                 <input
                   type={inputType}
                   id="email-password"
                   placeholder="**********"
                   autoComplete="off"
+                  name="password"
                   maxLength={15}
-                  value={inpVal}
-                  onChange={(e) => passwordInput(e)}
+                  value={inputvalue.password}
+                  onChange={onChange}
                 />
                 <i className={pwClass} onClick={() => dontViewPw(!viewPw)}></i>
               </div>
             </div>
-            <button className="forgot-pw" onClick={clearInput}>
+            <button className="forgot-pw" onClick={forgotPassword}>
               Forgot password?
             </button>
           </form>
-          <button className="login-btn" type="submit">
+          <button className="login-btn" type="submit" onClick={onSubmit}>
             Login
           </button>
         </div>

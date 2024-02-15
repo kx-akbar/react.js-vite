@@ -160,7 +160,7 @@ input[type="email"],
 .fa-lock:hover {
   color: blue;
   transform: scale(1.2);
-  filter: drop-shadow(0 0 10px blue);
+  filter: drop-shadow(0 0 5px blue);
 }
 
 .fa-envelope {
@@ -171,12 +171,12 @@ input[type="email"],
 .fa-envelope:hover {
   color: rgb(56, 56, 56);
   transform: scale(1.2);
-  filter: drop-shadow(0 0 10px rgb(169, 110, 0));
+  filter: drop-shadow(0 0 5px rgb(205, 133, 0));
 }
 
 .fa-eye,
 .fa-eye-slash {
-  transition: all 190ms;
+  transition: all 80ms;
   transform: scale(1);
 }
 
@@ -184,4 +184,5 @@ input[type="email"],
 .fa-eye-slash:hover {
   color: rgb(56, 56, 56);
   transform: scale(1.1044);
+  filter: drop-shadow(0 0 10px rgb(0, 255, 140));
 }
