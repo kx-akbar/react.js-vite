@@ -1,9 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import SignUp from "./SignUp/SignUp.jsx";
+import ResetPassword from "./SignUp/ResetPassword";
+// import SignUp from "./SignUp/SignUp.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <SignUp />
+    {/* <SignUp /> */}
+    <ResetPassword />
   </React.StrictMode>
 );
