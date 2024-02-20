@@ -1,5 +1,5 @@
 export const NavLists = [
-  { id: 1, title: "Anlitika", data: "", iconClass: "fa-solid fa-clock" },
+  { id: 1, title: "Anlitika", data: "", iconClass: "fa-solid fa-chart-pie" },
   {
     id: 2,
     title: "Buyurtma",
@@ -14,7 +14,7 @@ export const NavLists = [
     id: 3,
     title: "Lidlar",
     data: ["Barcha Lidlar", "Birinchi dars", "Yangi Talabalar"],
-    iconClass: "fa-regular fa-address-book",
+    iconClass: "fa-regular fa-pen-to-square",
   },
   {
     id: 4,

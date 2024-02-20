@@ -1,91 +1,97 @@
 import React, { useState } from "react";
-import logo from "../assets/user-logo.png";
 import { NavLists } from "./Lists.js";
 import {
-  Container,
-  Navbar,
-  HeaderNav,
-  NavTitle,
-  Logo,
-  LogoContainer,
-  AdminName,
-  AdminTitle,
-  AdminEmail,
-  Lists,
+  Main,
+  Header,
+  HeaderTitle,
+  AdminLogoSection,
+  AdminLogoBox,
+  AdminLogo,
+  AdminNameEmail,
+  AdminNameEmailTitle,
+  AdminNameEmailText,
   ListItem,
-  ListIcon,
-  ListInDisc,
-  MainListBox,
-  UnorderedListItem,
-  UnorderedList,
-  RightOpenArrow,
-} from "./Styled";
+  ListName,
+  Arrow,
+  UlListItem,
+  ItemIcons,
+} from "./Styled.js";
+import logo from "../assets/user-logo.png";
 
-const MenuBar = function ({ title, data, iconClass }) {
+const MenuBarOpen = function ({ title, data, iconClass }) {
   const [open, setOpen] = useState(false);
 
-  const handleOpenClose = () => {
+  const handleClick = function () {
     setOpen(!open);
   };
 
   return (
-    <MainListBox>
-      <ListItem onClick={handleOpenClose}>
-        <ListIcon className={iconClass}></ListIcon>
-        {title}
+    <div>
+      <ListItem onClick={handleClick} className="list">
+        <ItemIcons className={iconClass} id="icons"></ItemIcons>
+        <ListName
+          style={
+            open && data.length > 0
+              ? { color: "rgb(24, 144, 255)" }
+              : { color: "rgb(248, 250, 252)" }
+          }
+        >
+          {title}
+        </ListName>
         {data.length > 0 ? (
-          <RightOpenArrow
+          <Arrow
             className="fa-solid fa-chevron-right"
             style={
               open
-                ? { transform: "rotate(90deg)" }
-                : { transform: "rotate(0deg)" }
+                ? { transform: "rotate(91.5deg)" }
+                : { transform: "rotate(0)" }
             }
-          ></RightOpenArrow>
+          ></Arrow>
         ) : null}
       </ListItem>
+      {/* ----------------------------------------------------- */}
       {open && (
-        <ListInDisc>
+        <div>
           {data && data.length > 0 ? (
-            <UnorderedList type="none">
-              {data.map((value, index) => (
-                <UnorderedListItem key={index}>{value}</UnorderedListItem>
-              ))}
-            </UnorderedList>
+            <ul type="none" className="disc-list">
+              {data.map((val, index) => {
+                return <UlListItem key={index}>{val}</UlListItem>;
+              })}
+            </ul>
           ) : null}
-        </ListInDisc>
+        </div>
       )}
-    </MainListBox>
+    </div>
   );
 };
 
 function NavBar() {
   return (
     <div>
-      <Container>
-        <Navbar>
-          <HeaderNav>
-            <NavTitle>Webbrain.crm</NavTitle>
-          </HeaderNav>
-          <LogoContainer>
-            <Logo src={logo} alt="Not Found" />
-            <AdminTitle>
-              <AdminName>Sardorbek Muhtorov</AdminName>
-              <AdminEmail>s.muhtorov@gmail.com</AdminEmail>
-            </AdminTitle>
-          </LogoContainer>
-          <Lists>
-            {NavLists.map((value) => (
-              <MenuBar
-                key={value.id}
-                title={value.title}
-                data={value.data}
-                iconClass={value.iconClass}
-              />
-            ))}
-          </Lists>
-        </Navbar>
-      </Container>
+      <Main>
+        <Header>
+          <HeaderTitle>Webbrain.crm</HeaderTitle>
+        </Header>
+        <AdminLogoSection>
+          <AdminLogoBox>
+            <AdminLogo src={logo} alt="Not Found image" />
+          </AdminLogoBox>
+          <AdminNameEmail>
+            <AdminNameEmailTitle>Sardorbek Muhtorov</AdminNameEmailTitle>
+            <AdminNameEmailText>s.muhtorov@gmail.com</AdminNameEmailText>
+          </AdminNameEmail>
+        </AdminLogoSection>
+        <nav>
+          {NavLists.map((value) => (
+            <MenuBarOpen
+              key={value.id}
+              title={value.title}
+              data={value.data}
+              iconClass={value.iconClass}
+            />
+          ))}
+        </nav>
+      </Main>
     </div>
   );
 }
