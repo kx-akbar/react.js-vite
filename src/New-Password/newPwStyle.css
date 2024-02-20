@@ -1,0 +1,133 @@
+main > h1 {
+  color: rgb(31, 31, 31);
+  font-family: Inter;
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 2.38rem;
+  letter-spacing: 0rem;
+  text-align: center;
+}
+
+main > p {
+  margin-top: 1.6rem;
+  color: rgb(140, 140, 140);
+  font-family: Inter;
+  font-size: 0.88rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+  letter-spacing: 0.5%;
+  text-align: center;
+}
+
+.new-passsword {
+  margin: 1.3rem 0 0 0;
+}
+
+.new-passsword > label {
+  display: block;
+  font-family: Inter;
+  font-size: 0.88rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+  letter-spacing: 0.5%;
+  text-align: left;
+  padding: 0.15rem 0 0.5 0;
+}
+
+.new-passsword > label > b {
+  color: red;
+}
+
+.inputs > input {
+  outline: none;
+  border: none;
+  color: rgb(146, 159, 175);
+  font-family: Inter;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.5%;
+  text-align: left;
+  width: 100%;
+  padding: 0.38rem 0.75rem 0.38rem 0.75rem;
+}
+
+.inputs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 24.38rem;
+  padding: 0.38rem 0.75rem 0.38rem 0;
+  border: 0.06rem solid rgb(187, 195, 205);
+  border-radius: 0.5rem;
+  background: rgb(255, 255, 255);
+}
+
+.line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 24.38rem;
+  overflow: hidden;
+  margin-top: 1.72rem;
+}
+
+.line > span {
+  width: 7.79rem;
+  height: 0.25rem;
+  border-radius: 0.13rem;
+  /* background: rgb(245, 34, 45); */
+  background: rgb(187, 195, 205);
+}
+
+.test-box {
+  margin-top: 1.72rem;
+}
+
+.test-box > strong {
+  color: rgb(140, 140, 140);
+  font-family: Inter;
+  font-size: 0.88rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.password-test {
+  display: flex;
+  align-items: center;
+  margin: 0.8rem 0;
+  column-gap: 0.4rem;
+}
+
+.password-test > i {
+  font-size: 0.94rem;
+  color: rgb(146, 159, 175);
+}
+
+.password-test > b {
+  color: rgb(140, 140, 140);
+  font-family: Inter;
+  font-size: 0.88rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.continue-btn {
+  width: 24.38rem;
+  height: 3rem;
+  color: rgb(255, 255, 255);
+  font-family: Inter;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  letter-spacing: 0.5%;
+  padding: 0.75rem 1.13rem 0.75rem 1.13rem;
+  border: 0.06rem solid rgb(47, 84, 235);
+  border-radius: 0.5rem;
+  box-shadow: inset 0rem 0rem 0rem 0.13rem rgba(255, 255, 255, 0.12);
+  background: rgb(24, 144, 255);
+}

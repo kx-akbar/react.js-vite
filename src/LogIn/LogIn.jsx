@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./signStyle.css";
+import "./LogInStyle.css";
 
-function SignUp() {
+function LogIn() {
   const [viewPw, dontViewPw] = useState(false);
   const [inputvalue, setInputValue] = useState({
     email: "",
@@ -146,4 +146,4 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+export default LogIn;
