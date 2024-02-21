@@ -74,6 +74,7 @@ export const ListItem = styled.article`
   position: relative;
   padding: 0.6rem 0 0.6rem 1.5rem;
   &:hover {
+    cursor: pointer;
     background: rgb(37, 62, 95);
   }
 `;
@@ -106,6 +107,7 @@ export const UlListItem = styled.ul`
   letter-spacing: 0%;
   padding: 0.7rem 0 0.7rem 0;
   &:hover {
+    cursor: pointer;
     background: rgb(37, 62, 95);
   }
 `;
