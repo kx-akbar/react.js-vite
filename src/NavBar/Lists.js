@@ -1,5 +1,25 @@
+import analitik from "../assets/icon/Chart.svg?react";
+import groups from "../assets/icon/Groups.svg?react";
+import Note from "../assets/icon/Note.svg?react";
+import moliya from "../assets/icon/Lids.svg?react";
+import setting from "../assets/icon/Setting.svg?react";
+import hr from "../assets/icon/HR.svg?react";
+import course from "../assets/icon/Courses.svg?react";
+import students from "../assets/icon/Students.svg?react";
+import logOut from "../assets/icon/Logout.svg?react";
+import adminLogo from "../assets/images/userLogo.png";
+
+export const BrandName = { brandName: "Webbrain.crm" };
+
+export const AdminData = {
+  id: 1,
+  name: "Sardorbek Muhtorov",
+  email: "s.muhtorov@gmail.com",
+  logo: adminLogo,
+};
+
 export const NavLists = [
-  { id: 1, title: "Anlitika", data: "", iconClass: "fa-solid fa-chart-pie" },
+  { id: 1, title: "Anlitika", data: [], iconClass: analitik },
   {
     id: 2,
     title: "Buyurtma",
@@ -8,48 +28,54 @@ export const NavLists = [
       "Birinchi darsga yozilish",
       "Yangi talabalar ro'yxati",
     ],
-    iconClass: "fa-regular fa-address-book",
+    iconClass: Note,
   },
   {
     id: 3,
     title: "Lidlar",
     data: ["Barcha Lidlar", "Birinchi dars", "Yangi Talabalar"],
-    iconClass: "fa-regular fa-pen-to-square",
+    iconClass: moliya,
   },
   {
     id: 4,
     title: "Moliya",
-    data: "",
-    iconClass: "fa-solid fa-wallet",
+    data: [],
+    iconClass: moliya,
   },
   {
     id: 5,
     title: "Talaba",
     data: ["Barcha Talabalar", "Davomat", "Active", "Arxiv", "Ota-onalar"],
-    iconClass: "fa-solid fa-graduation-cap",
+    iconClass: students,
   },
   {
     id: 6,
     title: "Guruhlar",
     data: ["Guruhlar", "Dars Jadvali", "Xonalar"],
-    iconClass: "fa-solid fa-user-group",
+    iconClass: groups,
   },
   {
     id: 7,
     title: "Kurslar",
     data: ["Barcha Kurslar", "Yo'nalishlar"],
-    iconClass: "fa-solid fa-book",
+    iconClass: course,
   },
   {
     id: 8,
     title: "HR",
     data: ["Ro'llar", "Xodimlar"],
-    iconClass: "fa-solid fa-briefcase",
+    iconClass: hr,
   },
   {
     id: 9,
     title: "Sozlamalar",
     data: ["Umumiy Sozlamalar", "Manager", "Mentor", "Talaba"],
-    iconClass: "fa-solid fa-gear",
+    iconClass: setting,
+  },
+  {
+    id: 10,
+    title: "Chiqish",
+    data: [],
+    iconClass: logOut,
   },
 ];

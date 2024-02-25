@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 
 export const Main = styled.main`
   width: 25%;
@@ -9,12 +9,12 @@ export const Main = styled.main`
 `;
 
 export const Header = styled.header`
+  display: flex;
+  align-items: center;
   width: 100%;
   border: 0.06rem solid rgb(37, 62, 95);
-  height: 11vh;
-  padding-left: 1.5rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  height: 8vh;
+  padding: 16px 24px 16px 30px;
 `;
 
 export const HeaderTitle = styled.h1`
@@ -43,7 +43,6 @@ export const AdminLogo = styled.img`
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
-  filter: contrast(50%);
 `;
 
 export const AdminNameEmail = styled.div`
@@ -71,7 +70,6 @@ export const AdminNameEmailText = styled.p`
 export const ListItem = styled.article`
   display: flex;
   align-items: center;
-  position: relative;
   padding: 0.6rem 0 0.6rem 1.5rem;
   &:hover {
     cursor: pointer;
@@ -91,8 +89,8 @@ export const ListName = styled.b`
 `;
 
 export const Arrow = styled.i`
-  position: absolute;
-  right: 1.5rem;
+  margin-left: auto;
+  margin-right: 1.3rem;
   font-size: 1.1rem;
   color: rgb(24, 144, 255);
 `;
@@ -112,8 +110,96 @@ export const UlListItem = styled.ul`
   }
 `;
 
-export const ItemIcons = styled.i`
+export const ItemIcons = styled.img`
   color: rgb(146, 159, 175);
   font-size: 1.25rem;
   margin: 0 0.5rem 0 0;
+`;
+
+const popup = keyframes`
+
+from{
+  transform: translateY(-15px);
+}
+
+20%{
+  transform: translateY(0);
+}
+
+40%{
+  transform: translateY(-10px);
+}
+
+60%{
+  transform: translateY(0);
+}
+
+80%{
+  transform: translateY(-5px);
+}
+
+to{
+  transform: translateY(0);
+}
+
+`;
+
+export const ModalBox = styled.div`
+  display: grid;
+  justify-content: space-between;
+  row-gap: 0.5rem;
+  font-family: "Roboto", sans-serif;
+  padding: 20px 24px 20px 24px;
+  border-radius: 0.5rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  background-color: #ffffff;
+  animation: ${popup} 350ms linear;
+`;
+
+export const AdminName = styled.h2`
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+`;
+
+export const ButtonBox = styled.div`
+  display: flex;
+  padding: 1rem 0 0;
+  column-gap: 0.8rem;
+  align-self: flex-end;
+  margin-left: auto;
+  margin-top: auto;
+`;
+
+const Button = css`
+  padding: 10px 16px 10px 16px;
+  background-color: #1890ff;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 300;
+  border: none;
+  width: 5.4rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  text-align: center;
+`;
+
+export const CancelButton = styled.button`
+  ${Button}
+  border: 1px solid #ffa39e;
+  color: red;
+  background-color: #ffffff;
+`;
+
+export const OKButton = styled.button`
+  ${Button}
+  color: #F8FAFC;
+`;
+
+export const ModalContainer = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;

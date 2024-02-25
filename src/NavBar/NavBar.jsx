@@ -15,8 +15,15 @@ import {
   Arrow,
   UlListItem,
   ItemIcons,
+  ModalBox,
+  AdminName,
+  ButtonBox,
+  OKButton,
+  CancelButton,
+  ModalContainer,
 } from "./Styled.js";
-import logo from "../assets/user-logo.png";
+import { AdminData } from "./Lists.js";
+import { BrandName } from "./Lists.js";
 
 const MenuBarOpen = function ({ title, data, iconClass }) {
   const [open, setOpen] = useState(false);
@@ -27,12 +34,22 @@ const MenuBarOpen = function ({ title, data, iconClass }) {
 
   return (
     <div>
-      <ListItem onClick={handleClick} className="list">
-        <ItemIcons className={iconClass} id="icons"></ItemIcons>
+      <ListItem
+        onClick={handleClick}
+        className="list"
+        style={
+          open
+            ? { background: "rgb(37, 62, 95)" }
+            : { background: "transparent" }
+        }
+      >
+        <ItemIcons src={iconClass}></ItemIcons>
         <ListName
           style={
             open && data.length > 0
-              ? { color: "rgb(24, 144, 255)" }
+              ? {
+                  color: "rgb(24, 144, 255)",
+                }
               : { color: "rgb(248, 250, 252)" }
           }
         >
@@ -66,19 +83,56 @@ const MenuBarOpen = function ({ title, data, iconClass }) {
 };
 
 function NavBar() {
+  const [viewModal, setViewModal] = useState(false);
+  const onViewModalBox = function () {
+    setViewModal(!viewModal);
+  };
+
   return (
     <div>
-      <Main>
+      {viewModal ? (
+        <ModalContainer style={viewModal ? { backdropFilter: "20px" } : null}>
+          <ModalBox>
+            <img src={AdminData.logo} alt="Not Found Images" />
+            <AdminName>
+              Admin Name: <b>{AdminData.name || "No name"}</b>
+            </AdminName>
+            <p>Admin Email: {AdminData.email || "No email"}</p>
+            <ButtonBox>
+              <CancelButton onClick={onViewModalBox}>Cancel</CancelButton>
+              <OKButton onClick={onViewModalBox}>OK</OKButton>
+            </ButtonBox>
+          </ModalBox>
+        </ModalContainer>
+      ) : null}
+
+      {/* --------------------------------------------------------------------------------- */}
+
+      <Main
+        style={
+          viewModal
+            ? {
+                pointerEvents: "none",
+                filter: "blur(2.5px)",
+                userSelect: "none",
+              }
+            : { pointerEvents: "auto", filter: "blur(0)" }
+        }
+      >
         <Header>
-          <HeaderTitle>Webbrain.crm</HeaderTitle>
+          <HeaderTitle>{BrandName.brandName || "No Brand Name"}</HeaderTitle>
         </Header>
         <AdminLogoSection>
           <AdminLogoBox>
-            <AdminLogo src={logo} alt="Not Found image" />
+            <AdminLogo
+              src={AdminData.logo}
+              alt="Not Found image"
+              onClick={onViewModalBox}
+            />
           </AdminLogoBox>
           <AdminNameEmail>
-            <AdminNameEmailTitle>Sardorbek Muhtorov</AdminNameEmailTitle>
-            <AdminNameEmailText>s.muhtorov@gmail.com</AdminNameEmailText>
+            <AdminNameEmailTitle>{AdminData.name}</AdminNameEmailTitle>
+            <AdminNameEmailText>{AdminData.email}</AdminNameEmailText>
           </AdminNameEmail>
         </AdminLogoSection>
         <nav>
