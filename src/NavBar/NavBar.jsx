@@ -25,6 +25,7 @@ import {
 import { AdminData } from "./Lists.js";
 import { BrandName } from "./Lists.js";
 
+// Menu bar Component
 const MenuBarOpen = function ({ title, data, iconClass }) {
   const [open, setOpen] = useState(false);
 
@@ -82,6 +83,7 @@ const MenuBarOpen = function ({ title, data, iconClass }) {
   );
 };
 
+// NavBar Component
 function NavBar() {
   const [viewModal, setViewModal] = useState(false);
   const onViewModalBox = function () {

@@ -9,8 +9,10 @@ import students from "../assets/icon/Students.svg?react";
 import logOut from "../assets/icon/Logout.svg?react";
 import adminLogo from "../assets/images/userLogo.png";
 
+// Brand Name
 export const BrandName = { brandName: "Webbrain.crm" };
 
+// Admin data
 export const AdminData = {
   id: 1,
   name: "Sardorbek Muhtorov",
@@ -18,6 +20,7 @@ export const AdminData = {
   logo: adminLogo,
 };
 
+// Navbar List Items
 export const NavLists = [
   { id: 1, title: "Anlitika", data: [], iconClass: analitik },
   {
