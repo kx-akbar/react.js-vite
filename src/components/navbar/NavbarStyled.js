@@ -1,5 +1,6 @@
 import styled, { css, keyframes } from "styled-components";
 
+
 export const Main = styled.main`
   width: 25%;
   box-shadow: 0rem 0.5rem 0.5rem 0rem rgb(245, 246, 248);

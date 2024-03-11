@@ -10,10 +10,10 @@ import logOut from "../assets/icon/Logout.svg?react";
 import adminLogo from "../assets/images/userLogo.png";
 
 // Brand Name
-export const BrandName = { brandName: "Webbrain.crm" };
+export const brandName = { brandName: "Webbrain.crm" };
 
 // Admin data
-export const AdminData = {
+export const adminData = {
   id: 1,
   name: "Sardorbek Muhtorov",
   email: "s.muhtorov@gmail.com",
@@ -21,7 +21,7 @@ export const AdminData = {
 };
 
 // Navbar List Items
-export const NavLists = [
+export const navLists = [
   { id: 1, title: "Anlitika", data: [], iconClass: analitik },
   {
     id: 2,
@@ -81,4 +81,17 @@ export const NavLists = [
     data: [],
     iconClass: logOut,
   },
+];
+
+export const student = [
+  { id: 1, name: "Eshmat" },
+  { id: 2, name: "Toshmat" },
+  { id: 3, name: "Eshmat" },
+  { id: 4, name: "Toshmat" },
+  { id: 5, name: "Eshmat" },
+  { id: 6, name: "Toshmat" },
+  { id: 7, name: "Eshmat" },
+  { id: 8, name: "Toshmat" },
+  { id: 9, name: "Eshmat" },
+  { id: 10, name: "Toshmat" },
 ];
