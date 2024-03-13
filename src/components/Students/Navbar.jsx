@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
-import { StudentContext } from "../../context/StudentContext.jsx";
+import { StudentContext } from "../../context/Student";
 
 const Nav = styled.nav`
   display: flex;
@@ -14,7 +14,6 @@ const Nav = styled.nav`
 
 function Navbar() {
   const [list] = useContext(StudentContext);
-  console.log("navbar render");
   return (
     <div>
       <Nav>

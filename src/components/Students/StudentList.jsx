@@ -1,13 +1,8 @@
 import React, { useContext } from "react";
-import { StudentContext } from "../../context/StudentContext.jsx";
+import { StudentContext } from "../../context/Student";
 
 function Students() {
-  const [list, setList] = useContext(StudentContext);
-  const onDelete = (id) => {
-    let res = list.filter((val) => val.id !== id);
-    setList(res);
-  };
-  console.log("students render", list);
+  const [list, dispatch] = useContext(StudentContext);
   return (
     <div>
       <main>
@@ -15,7 +10,11 @@ function Students() {
         {list.map((value) => (
           <h2 key={value.id} style={{ margin: "15px 30px" }}>
             {value.id} {value.name}
-            <button onClick={() => onDelete(value.id)}>delete</button>
+            <button
+              onClick={() => dispatch({ type: "delete", payload: value.id })}
+            >
+              delete
+            </button>
           </h2>
         ))}
       </main>

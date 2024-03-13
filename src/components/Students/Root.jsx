@@ -3,7 +3,6 @@ import Navbar from "./Navbar.jsx";
 import Students from "./StudentList.jsx";
 
 function Root() {
-  console.log("root render");
   return (
     <div>
       <Navbar />
