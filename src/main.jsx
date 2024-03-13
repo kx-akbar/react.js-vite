@@ -1,12 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import Root from "./root/Root.jsx";
-
-export const StudentContext = createContext();
+import Root from "./components/Students/Root.jsx";
+import { StudentProvider } from "./context/StudentContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Root />
+    <StudentProvider>
+      <Root />
+    </StudentProvider>
   </React.StrictMode>
 );

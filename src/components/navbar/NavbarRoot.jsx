@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Navbar from "../components/navbar/Navbar.jsx";
-import Modal from "../components/navbar/Modal.jsx";
+import Navbar from "./Navbar.jsx";
+import Modal from "./Modal.jsx";
 
 function Root() {
   const [viewModal, setViewModal] = useState(false);

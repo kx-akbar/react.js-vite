@@ -1,16 +1,17 @@
 import React, { useContext } from "react";
-import { StudentContext } from "../main";
-// import { student } from "../menu/menu.js";
+import { StudentContext } from "../../context/StudentContext.jsx";
 
-function Students({ list, onDelete }) {
-  const context = useContext(StudentContext);
-  console.log("students render", context);
+function Students() {
+  const [list, setList] = useContext(StudentContext);
+  const onDelete = (id) => {
+    let res = list.filter((val) => val.id !== id);
+    setList(res);
+  };
+  console.log("students render", list);
   return (
     <div>
       <main>
-        <h1>
-          All students {list.length > 0 ? list.length : "Studentlar qolmadi"}
-        </h1>
+        <h1>All students {list.length}</h1>
         {list.map((value) => (
           <h2 key={value.id} style={{ margin: "15px 30px" }}>
             {value.id} {value.name}
