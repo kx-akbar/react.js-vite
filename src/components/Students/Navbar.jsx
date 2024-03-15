@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { memo, useContext } from "react";
 import styled from "styled-components";
 import { StudentContext } from "../../context/Student";
 
@@ -12,7 +12,8 @@ const Nav = styled.nav`
   padding: 1.4rem 0;
 `;
 
-function Navbar() {
+const Navbar = memo(() => {
+  console.log("navbar render");
   const [list] = useContext(StudentContext);
   return (
     <div>
@@ -24,6 +25,6 @@ function Navbar() {
       </Nav>
     </div>
   );
-}
+});
 
 export default Navbar;

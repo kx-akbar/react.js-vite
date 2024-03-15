@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { StudentContext } from "../../context/Student";
 
-function Students() {
+const Students = memo(() => {
+  console.log("students render");
   const [list, dispatch] = useContext(StudentContext);
   return (
     <div>
@@ -20,6 +21,6 @@ function Students() {
       </main>
     </div>
   );
-}
+});
 
 export default Students;
