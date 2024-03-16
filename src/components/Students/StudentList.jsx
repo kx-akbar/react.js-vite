@@ -1,14 +1,15 @@
-import React, { useContext } from "react";
-import { StudentContext } from "../../context/Student";
+import React, { memo, useContext } from "react";
+// import { StudentContext } from "../../context/Student";
 
-const Students = memo(() => {
+const Students = () => {
   console.log("students render");
-  const [list, dispatch] = useContext(StudentContext);
+  // const [list, dispatch] = useContext(StudentContext);
   return (
     <div>
       <main>
-        <h1>All students {list.length}</h1>
-        {list.map((value) => (
+        <h1>All students</h1>
+        {/* <h1>All students {list.length}</h1> */}
+        {/* {list.map((value) => (
           <h2 key={value.id} style={{ margin: "15px 30px" }}>
             {value.id} {value.name}
             <button
@@ -17,10 +18,10 @@ const Students = memo(() => {
               delete
             </button>
           </h2>
-        ))}
+        ))} */}
       </main>
     </div>
   );
-});
+};
 
-export default Students;
+export default memo(Students);
