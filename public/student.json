@@ -1,0 +1,11 @@
+{
+  "student": [
+    { "id": 1, "name": "Eshmat" },
+    { "id": 2, "name": "Toshmat" },
+    { "id": 3, "name": "G'ulom" },
+    { "id": 4, "name": "Akbar" },
+    { "id": 5, "name": "Qo'chqorvoy" },
+    { "id": 6, "name": "Olimboy" },
+    { "id": 7, "name": "Laziz" }
+  ]
+}
