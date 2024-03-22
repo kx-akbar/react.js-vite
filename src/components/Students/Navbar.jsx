@@ -1,6 +1,6 @@
 import React, { memo, useContext } from "react";
 import styled from "styled-components";
-// import { StudentContext } from "../../context/Student";
+import { StudentContext } from "../../context/Student";
 
 const Nav = styled.nav`
   display: flex;
@@ -14,14 +14,14 @@ const Nav = styled.nav`
 
 const Navbar = () => {
   console.log("navbar render");
-  // const [list] = useContext(StudentContext);
+  const [list] = useContext(StudentContext);
   return (
     <div>
       <Nav>
         <b>Home</b>
         <b>About</b>
         <b>Contact</b>
-        {/* <b>Student {list.length}</b> */}
+        <b>Student {list.length}</b>
       </Nav>
     </div>
   );

@@ -7,7 +7,11 @@ export const reduce = (state, { type, payload }) => {
     case "delete":
       return state.filter((val) => val.id !== payload);
     case "edit":
-      return state;
+      let { key, value } = payload;
+      const res = initialValue.filter((val) =>
+        String(val[key]).includes(value)
+      );
+      return res;
     default:
       return state;
   }
