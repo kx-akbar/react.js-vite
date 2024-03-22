@@ -1,21 +1,25 @@
-import React, { memo, useContext, useState } from "react";
+import React, { memo, useContext, useRef } from "react";
 import { StudentContext } from "../../context/Student";
 
 const Students = () => {
   const [list, dispatch] = useContext(StudentContext);
-  const [id, setId] = useState(null);
-  const [name, setName] = useState(null);
+  const refId = useRef();
+  const refName = useRef();
   const onChange = () => {
-    dispatch({ type: "edit", payload: { key: "name", value: name } });
-  };
-
-  const onChangeId = ({ target: { value } }) => {
-    setId(value);
-  };
-
-  const onChangeName = ({ target: { value } }) => {
-    setName(value);
-    console.log(name);
+    if (refId.current.placeholder == "name") {
+      dispatch({
+        type: "edit",
+        payload: { key: refId.current.placeholder, value: refId.current.value },
+      });
+    } else {
+      dispatch({
+        type: "edit",
+        payload: {
+          key: refName.current.placeholder,
+          value: refName.current.value,
+        },
+      });
+    }
   };
 
   return (
@@ -23,8 +27,8 @@ const Students = () => {
       <main>
         <h1>All students {list.length}</h1>
         <div style={{ padding: "10px 20px" }}>
-          <input type="text" onChange={onChangeId} placeholder="id" />
-          <input type="text" onChange={onChangeName} placeholder="name" />
+          <input type="text" ref={refId} placeholder="id" />
+          <input type="text" ref={refName} placeholder="name" />
           <button onClick={onChange}>search</button>
         </div>
         {list.map((value) => (
