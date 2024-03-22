@@ -1,8 +1,8 @@
 import React, { memo, useContext } from "react";
 // import { StudentContext } from "../../context/Student";
 
-const Students = () => {
-  console.log("students render");
+const Students = ({ callback }) => {
+  console.log("students render", callback("academy"));
   // const [list, dispatch] = useContext(StudentContext);
   return (
     <div>
